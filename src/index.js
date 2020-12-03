@@ -1,17 +1,36 @@
-import React from 'react';
+ import React from "react";
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {  
+  ApolloClient,
+  ApolloProvider,
+  HttpLink,
+  InMemoryCache
+} from "@apollo/client";
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import Theme from './components/theme/theme';
+import App from "./App";
+import App2 from './components/App2'
+
+
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({
+    uri: 'https://spacexdata.herokuapp.com/graphql'
+  })
+})
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ApolloProvider client={client}>
+    <MuiThemeProvider theme={Theme}>
+    
+    <App2/>
+    <App/>    
+  
+    
+    </MuiThemeProvider>
+  </ApolloProvider>,
+
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ 

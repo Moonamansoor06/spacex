@@ -1,0 +1,44 @@
+.root{
+  display: flex,
+  
+  
+  
+}
+.LaunchProfile {
+    height: 100vh;
+    max-height: 100%;
+    width: auto;
+    overflow: hidden auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .LaunchProfile__status {
+    margin-top: 5px;
+  }
+  
+  .LaunchProfile__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  
+  .LaunchProfile__success {
+    color: #2cb84b;
+  }
+  
+  .LaunchProfile__failed {
+    color: #ff695e;
+  }
+  
+  .LaunchProfile__image-list {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2px;
+  
+  }
+  
+  .LaunchProfile__image {
+    height:200px;
+    width: 100%;
+  }
