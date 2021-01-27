@@ -10,7 +10,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import Theme from './components/theme/theme';
 import App from "./App";
 import App2 from './components/App2'
-import * as serviceWorker from './serviceWorker';
+
 
 
 const client = new ApolloClient({
@@ -33,5 +33,3 @@ ReactDOM.render(
 
   document.getElementById('root')
 );
- 
-serviceWorker.register();
